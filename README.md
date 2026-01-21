@@ -10,3 +10,6 @@ npm run build 或 yarn build
 
 # 部署
 将打包后的所有文件放到/dist/projects/dashboard下，dist为主程序目录
+
+# 生产环境访问地址
+例如 http://cloud.nvisual.com/projects/dashboard/index.html
