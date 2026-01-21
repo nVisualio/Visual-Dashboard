@@ -1,0 +1,8 @@
+if (window.nvisual) {
+  window.nvisual.pageTurn = 'https://cloud.nvisual.com/access.html',
+  window.nvisual.topLevel = '', // '顶层'的名称。默认为“顶层文字”
+  window.nvisual.nvisualTitle = 'nvisual', // nvisual系统的网页的标题
+  window.nvisual.nvisualLanguage = '' // nvisual的语言选择项，目前可选值有两个，分别为'zh-cn'以及'en'
+  window.nvisual.theme = '' // 不设定就读取全局设置接口里的值, 该配置只在第一次打开页面或清除缓存后生效
+  window.nvisual.noModifyLogo = false; // 是否允许用户修改logo, 默认为允许修改。false: 默认设置/允许设置，true: 不允许用户修改
+}

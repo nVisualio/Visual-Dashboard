@@ -1,0 +1,58 @@
+/* 改变主题色变量 */
+$--color-primary: #414040;
+
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: '~element-ui/lib/theme-chalk/fonts';
+
+@import "~element-ui/packages/theme-chalk/src/index";
+//*{
+//  user-select:none;
+//}
+.el-select-dropdown__wrap {
+  max-height: none;
+}
+
+.el-select-dropdown__item {
+  background-color: transparent;
+}
+
+.el-select-dropdown__item.hover {
+  background-color: transparent;
+}
+
+.el-select-dropdown__empty {
+  display: none;
+}
+
+.el-select-dropdown__list {
+  max-height: 400px;
+  //max-width: 200px;
+}
+
+//:root{
+//  --animate-delay: 0.6s;
+//  --animate-duration: 600ms
+//}
+input::-webkit-inner-spin-button {
+  appearance: none
+}
+#htBgImg{
+  user-select: none;
+}
+[class^="icon-"], [class*=" icon-"] {
+  .path1, path2{
+    font-family: inherit;
+  }
+}
+.dx-icon-xlsxfile::before {
+  content: url("/img/devExpress/导出全部.svg")!important;
+}
+.dx-icon-exportselected::before {
+  content: url("/img/devExpress/导出已选.svg")!important;
+}
+.dx-icon-export-to::before {
+  content: url("/img/devExpress/导出.svg")!important;
+}
+.dx-datagrid{
+  font-size:12px!important;
+}

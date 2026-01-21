@@ -1,0 +1,65 @@
+#dataFilter
+  $border-color = #3c3c3c
+  position absolute
+  right 0
+  bottom 0
+  border-bottom 1px solid $border-color
+  border-top-left-radius 8px
+  border-top-right-radius 8px
+  font-size 13px
+  background-color transparent
+  color white
+  #dataFilter-header
+    display flex
+    justify-content space-between
+    padding 3px 20px
+    background-color #4a4949
+    #closeDataFilterWindow
+      cursor pointer
+      &:hover
+        background-color #F00
+  #dataFilter-body
+    &>ul
+      display flex
+      justify-content space-around
+      align-items stretch
+      padding 0
+      margin 0
+      li
+        display inline-block
+        box-sizing border-box
+        width 250px
+        border-top 1px solid $border-color
+        border-right 1px solid $border-color
+        &:nth-child(odd)
+          background-color rgba(80,80,80,0.9)
+        &:nth-child(even)
+          background-color rgba(87,87,87,0.9)
+        &>.tableDesc
+          text-align center
+          border-bottom 1px solid $border-color
+          background-color rgba(73,73,73,0.6)
+        &>.tableWrap
+          overflow auto
+          height 240px
+        table
+          width 100%
+          padding-left 15px
+          margin 10px 0 20px
+          td
+            vertical-align top
+            input[type="checkbox"]
+              appearance none
+              width 13px
+              height 13px
+              outline 0
+              background-color white
+              cursor pointer
+            input[type="checkbox"]:checked
+              background-color #f69a2e
+            &:first-child
+              width 20%
+            &:nth-child(2)
+              width 65%
+            &:last-child
+              width 15%

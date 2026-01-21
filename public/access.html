@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="referrer" content="never">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Cache-Control" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>
+  </title>
+  <link rel="icon" href="<%= BASE_URL %>favicon.ico">
+  <link rel="stylesheet" href="<%= BASE_URL %>config/display.css?v=1.0.4">
+  <link rel="stylesheet" href="<%= BASE_URL %>css/element-ui/element.css?v=1.0.4">
+  <script src="<%= BASE_URL %>config/api.js"></script>
+  <style>
+    body,
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    input {
+      writing-mode: horizontal-tb !important;
+      text-rendering: auto;
+      color: fieldtext;
+      letter-spacing: normal;
+      word-spacing: normal;
+      line-height: normal;
+      text-transform: none;
+      text-indent: 0px;
+      text-shadow: none;
+      display: inline-block;
+      text-align: start;
+      appearance: auto;
+      -webkit-rtl-ordering: logical;
+      cursor: text;
+      background-color: field;
+      margin: 0em;
+      padding: 1px 2px;
+      border-width: 2px;
+      border-style: inset;
+      border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+      border-image: initial;
+      -webkit-tap-highcolor: transparent;
+    }
+
+    input:-webkit-autofill {
+      box-shadow: 0 0 0 1000px #fff inset;
+    }
+
+    input[type="password" i] {
+      -webkit-text-security: disc !important;
+      padding: 1px 2px;
+    }
+
+    body {
+      background-color: #bfc3c7;
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      background-position: center;
+      z-index: 1;
+    }
+
+    body .reseting {
+      position: absolute;
+      z-index: 999;
+      left: 40%;
+      top: 38%;
+      border-radius: 10px;
+      background-color: rgb(255, 255, 255);
+      height: 15%;
+      width: 20%;
+    }
+
+    body .reseting .resetTab {
+      min-width: 340px;
+      height: inherit;
+      font-size: 14px;
+      color: #3D4757;
+      border-radius: 10px;
+    }
+
+    body .reseting .resetTab span {
+      position: absolute;
+      color: #6C6C6C;
+      left: 10%;
+      right: 10%;
+      top: 18%;
+    }
+
+    body .reseting .resetTab button {
+      position: absolute;
+      color: #eee;
+      left: 35%;
+      width: 30%;
+      top: 70%;
+      height: 20%;
+      background-color: #11AC80;
+      border: 0px solid #11AC80;
+    }
+
+    body #login_area {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      align-items: center;
+      position: relative;
+      width: 25%;
+      min-width: 340px;
+      padding: 20px 0px 0px;
+      border-radius: 10px;
+      margin-bottom: 5%;
+      background-color: hsla(0, 0%, 100%, .9);
+    }
+
+    body .login-area .tr {
+      height: 35px;
+      float: none;
+      width: 100%;
+      margin-top: 10px;
+      min-width: 120px;
+      max-width: 280px;
+      padding-top: 0;
+      padding-right: 0;
+      position: relative;
+    }
+
+    body .login-area .tr .shuxian {
+      width: 20px;
+      height: 20px;
+      border-left: 1px solid #E0E4EB;
+      position: absolute;
+      right: 20px;
+      top: 8px;
+    }
+
+    body .login-area .tr .icon {
+      position: absolute;
+      right: 7px;
+      top: 0;
+      color: #c0c4cc;
+      height: 100%;
+      text-align: center;
+      line-height: 35px;
+      width: 18px;
+      font-size: 18px;
+      color: #333;
+    }
+
+    body .login-area .tr input {
+      line-height: 35px;
+      outline: none;
+      transition: border-color .2s cubic-bezier(.645, .045, .355, 1);
+      width: 100%;
+      border-radius: 0;
+      height: inherit;
+      background-color: #fff;
+      border: 1px solid rgba(0, 0, 0, .3);
+      font-size: 12px;
+      color: #000;
+      padding-left: 20px;
+      padding-right: 50px;
+      text-align: left;
+      box-sizing: border-box;
+
+    }
+
+    body .login-area .tr input::-webkit-scrollbar-thumb {
+      border-radius: 5px;
+      width: 6px;
+      background: #b4bccc;
+    }
+
+    body .login-area .tr input::input-placeholder {
+      color: #ccc;
+    }
+
+    body .login-area .tr .icon-suffix {
+      position: absolute;
+      height: 100%;
+      right: 7px;
+      top: 0;
+      text-align: center;
+      color: #c0c4cc;
+      /* pointer-events: none; */
+      display: block;
+      width: 35px;
+      cursor: pointer;
+      z-index: 1;
+      visibility: hidden;
+    }
+
+    body .login-area .submit-area {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 6%;
+    }
+
+    body .login-area .submit {
+      height: 35px;
+      float: none;
+      width: 100%;
+      margin-top: 25px;
+      min-width: 120px;
+      max-width: 280px;
+      padding-top: 0;
+      padding-right: 0;
+      position: relative;
+      text-align: center;
+      background-color: #11ac80;
+      line-height: 35px;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 18px;
+    }
+
+    body .login-area .loginingSubmit {
+      display: none;
+      height: 35px;
+      float: none;
+      width: 100%;
+      margin-top: 25px;
+      min-width: 120px;
+      max-width: 280px;
+      padding-top: 0;
+      padding-right: 0;
+      position: relative;
+      text-align: center;
+      background-color: #fff;
+      line-height: 35px;
+      border-radius: 5px;
+      color: #11ac80;
+      font-size: 18px;
+    }
+
+    body .login-area .formBottom-area {
+      font-size: 12px;
+      margin-top: 4%;
+      width: 100%;
+      display: flex;
+      max-width: 280px;
+      position: relative;
+    }
+
+    body .login-area .formBottom-area .sregist {
+      /* position: relative; */
+      color: #676767;
+      margin-left: 0%;
+      /* left: -60% */
+    }
+
+    body .login-area .formBottom-area .aregist {
+      /* position: relative; */
+      text-decoration: none;
+      color: #0E9366;
+      /* left: -60% */
+    }
+
+    body .login-area .formBottom-area .forgetPass {
+      /* position: relative; */
+      position: absolute;
+      right: -1%;
+      cursor: pointer;
+      text-decoration: none;
+      color: #0E9366;
+      /* left: 60% */
+    }
+
+    body header {
+      top: 0%;
+      text-align: center;
+      display: flex;
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    body header .left {
+      position: absolute;
+    }
+
+    body header .right {
+      position: absolute;
+      float: right;
+    }
+
+    body footer {
+      text-align: center;
+      display: flex;
+      position: absolute;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+
+    body footer .left {
+      position: absolute;
+    }
+
+    body footer .right {
+      position: absolute;
+      float: right;
+    }
+
+    body #moveDiv {
+      position: absolute;
+      z-index: 2;
+    }
+
+    body #moveDiv #moveImg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+
+    #login_area .login_area_title {
+      font-weight: 700;
+      font-size: 22px;
+      display: flex;
+      margin: 18px 0 18px 0;
+      justify-content: center;
+      align-items: center;
+      color: #3D3D3D;
+      font-family: Source Han Sans CN;
+    }
+
+    body .formBottom {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding-bottom: 20px;
+      border-radius: 0 0 10px 10px;
+      background-color: #F1F5F8;
+    }
+
+    .loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.3);
+      z-index: 2;
+    }
+
+    .loadEffect {
+      width: 80px;
+      height: 80px;
+      position: absolute;
+      margin: 0 auto;
+      margin-top: 100px;
+      top: 50%;
+      left: 50%;
+      margin-top: -40px;
+      margin-left: -40px;
+    }
+
+    .loadEffect span {
+      display: inline-block;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #08a170;
+      position: absolute;
+      -webkit-animation: load 1.04s ease infinite;
+    }
+
+    @-webkit-keyframes load {
+      0% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0.2;
+      }
+    }
+
+    .loadEffect span:nth-child(1) {
+      left: 0;
+      top: 50%;
+      margin-top: -8px;
+      -webkit-animation-delay: 0.13s;
+    }
+
+    .loadEffect span:nth-child(2) {
+      left: 10px;
+      top: 10px;
+      -webkit-animation-delay: 0.26s;
+    }
+
+    .loadEffect span:nth-child(3) {
+      left: 50%;
+      top: 0;
+      margin-left: -8px;
+      -webkit-animation-delay: 0.39s;
+    }
+
+    .loadEffect span:nth-child(4) {
+      top: 10px;
+      right: 10px;
+      -webkit-animation-delay: 0.52s;
+    }
+
+    .loadEffect span:nth-child(5) {
+      right: 0;
+      top: 50%;
+      margin-top: -8px;
+      -webkit-animation-delay: 0.65s;
+    }
+
+    .loadEffect span:nth-child(6) {
+      right: 10px;
+      bottom: 10px;
+      -webkit-animation-delay: 0.78s;
+    }
+
+    .loadEffect span:nth-child(7) {
+      bottom: 0;
+      left: 50%;
+      margin-left: -8px;
+      -webkit-animation-delay: 0.91s;
+    }
+
+    .loadEffect span:nth-child(8) {
+      bottom: 10px;
+      left: 10px;
+      -webkit-animation-delay: 1.04s;
+    }
+    #devModeGitInfo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 550px;
+      padding: 20px;
+    }
+  </style>
+</head>
+
+<body id="body">
+  <div id="loading" class="loading">
+    <div class="loadEffect">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+  <!-- 登录表单区域 -->
+  <div id="reseting" style="display: none;" class="reseting">
+    <div class="resetTab">
+      <span>重置密码仅限组织管理员，当前输入用户非组织管理员，无法自动重置密码，请您联系组织管理员重置密码。</span>
+      <button id="resetButton">确认</button>
+    </div>
+  </div>
+  <header id="header">
+    <img class="left" src="" id="headerLeft"></img>
+    <img class="center" src="" style="width: 300px;" id="headerCenter"></img>
+    <img class="right" id="headerRight"></img>
+  </header>
+  <footer id="footer">
+    <img class="left" src="" id="footerLeft"></img>
+    <img class="center" src="" style="width: 300px;" id="footerCenter"></img>
+    <img class="right" id="footerRight"></img>
+  </footer>
+  <div id="moveDiv">
+    <img src="" id="moveImg"></img>
+  </div>
+  <!-- <iframe id="devModeGitInfo" src="./iframe/dev/accessDevModeProjectInfo.html" frameborder="0" scrolling="no"></iframe> -->
+  <div id="login_area" class="login-area">
+    <div class="login_area_title">
+      <img src="./img/accessTip/LOGO.svg" style="width: 140px;" id="logoImg"></img>
+      <!-- <span>nVisual 网络可视化管理云平台</span> -->
+    </div>
+    <!-- <iframe id="devModeApiSelector" src="./iframe/dev/accessDevModeApiSelector.html" frameborder="0" width="280px" height="26px" scrolling="no"></iframe> -->
+    <div class="tr">
+      <span class="shuxian"></span>
+      <input id="from_userName" type="text" placeholder="用户名">
+      <i class="icon">
+        <svg t="1661931529822" class="icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          p-id="6289" width="200" height="200">
+          <path
+            d="M928.382896 791.521828c-16.965943-46.689367-41.579822-89.948478-73.155583-128.575208-51.760002-63.320477-120.315971-111.082951-196.762552-137.862498 12.559856-8.716946 24.437758-18.60837 35.477038-29.648675 48.352273-48.351249 74.981299-112.635269 74.981299-181.013069 0-68.3778-26.629026-132.662844-74.981299-181.013069-48.351249-48.349201-112.634245-74.976179-181.00795-74.976179-68.3778 0-132.662844 26.626978-181.012045 74.976179s-74.976179 112.634245-74.976179 181.013069c0 68.3778 26.626978 132.662844 74.976179 181.012045 10.997298 10.997298 22.827073 20.858004 35.334708 29.549351-76.436342 26.701727-144.996406 74.372044-196.810678 137.613676-31.667918 38.653353-56.356545 81.956494-73.376758 128.70525-17.616156 48.38504-26.548133 99.258295-26.548133 151.205681 0 12.852708 10.419786 23.272495 23.272495 23.272495s23.271471-10.419786 23.271471-23.272495c0-184.927657 130.697871-347.138828 311.032057-386.437274 26.902422 9.421428 55.490277 14.340518 84.837909 14.340518 29.29541 0 57.834115-4.902706 84.696603-14.293416 180.095604 39.415177 310.672648 201.692905 310.672648 386.391196 0 12.852708 10.419786 23.272495 23.272495 23.272495s23.272495-10.419786 23.272495-23.272495C954.847064 890.641889 945.942734 839.842359 928.382896 791.521828zM303.487542 314.423402c0-115.489037 93.95727-209.446307 209.445283-209.446307 115.488014 0 209.445283 93.95727 209.445283 209.446307 0 115.489037-93.95727 209.445283-209.445283 209.445283C397.444811 523.868686 303.487542 429.91244 303.487542 314.423402z"
+            fill="#E0E4EB" p-id="6290"></path>
+        </svg>
+      </i>
+    </div>
+    <div class="tr" id="passwordTr">
+      <span class="shuxian"></span>
+      <i class="icon"><svg t="1661915903793" class="icon" viewBox="0 0 1024 1024" version="1.1"
+          xmlns="http://www.w3.org/2000/svg" p-id="3307" width="15" height="15">
+          <path
+            d="M798.290887 956.452581h-570.268078c-36.255739 0-60.720943-4.260024-79.328744-13.811564-18.295692-9.391904-40.105417-29.291117-40.105416-70.7606V404.810722h809.142537V871.880417c0 41.469484-21.809725 61.369719-40.105416 70.7606-18.609847 9.55154-43.077098 13.811564-79.334883 13.811564zM149.520897 445.74297V871.880417c0 28.302603 12.509918 43.639916 78.501912 43.639916h570.268078c65.996087 0 78.508052-15.337313 78.508051-43.639916V445.74297H149.520897z"
+            fill="#E0E4EB" p-id="3308"></path>
+          <path
+            d="M810.693358 445.74297H215.624431v-20.466124c0-4.27128 0.144286-57.948807 0.540305-65.896826 4.457522-90.340541 36.477796-166.611645 92.598978-220.560348 26.614148-25.583678 57.890478-45.370327 92.958159-58.811454 34.68087-13.289678 72.173786-20.029172 111.437021-20.029172 39.041178 0 76.32227 6.633071 110.805642 19.715017 34.908044 13.242606 66.073858 32.761148 92.63377 58.013275 55.999408 53.241598 88.294952 128.762619 93.396134 218.397079 0.521886 9.247618 0.699941 64.572668 0.699941 69.172429v20.466124z m-554.073234-40.932248h513.064238c-0.101307-18.323321-0.296759-41.780569-0.556679-46.38954C760.225943 201.99348 659.752624 100.911294 513.158894 100.911294c-145.500838 0-248.423953 104.685247-256.112052 260.495896-0.194428 3.90289-0.345877 25.88453-0.426718 43.403532z"
+            fill="#E0E4EB" p-id="3309"></path>
+          <path d="M492.69277 586.79038h40.932248v205.15038h-40.932248z" fill="#E0E4EB" p-id="3310"></path>
+        </svg></i>
+      <input id="form_md5_password" style="display: none;" placeholder="密码">
+      <input id="from_password" oninput="inputButton()" type="password" placeholder="密码">
+    </div>
+    <div class="submit-area">
+      <div id="loginButton" class="submit">登录</div>
+      <div id="loginingButton" class="loginingSubmit">登录</div>
+    </div>
+    <!-- <div class="formBottom accessFormBottom" style="width: 100%;">
+      <div class="formBottom-area">
+        <span id="registAccount">
+          <span id="noAccount" class="sregist">还没有账户？</span>
+          <a id="registAccountButton" class="aregist" href="/regist.html">注册公司</a>
+        </span>
+        <span id="forgetPassword" class="forgetPass">忘记密码？</span>
+      </div>
+    </div> -->
+  </div>
+  <script>
+    (function (window) {
+      var bgImgSrc = '/img/bg/saasLogin.jpg'
+      document.getElementById('body').style.backgroundImage = 'url(' + bgImgSrc + ')'
+    })(window);
+  </script>
+  <script>
+    function inputButton() {
+      document.getElementById('form_md5_password').value = document.getElementById('from_password').value;
+    }
+  </script>
+  <script src="./config/access.js?v=0.0.0.0"></script>
+  <script>
+    window.nvisual = {}
+    this.loadScript('./config/diagram.js?v='+ (+new Date())).then(res => {});
+    async function loadScript(url) {
+      const loadItem = () => {
+        if (window.nvisual.nvisualLanguage) {
+          localStorage.setItem('Nvisual_language', window.nvisual.nvisualLanguage)
+        }
+        if (window.nvisual.pageTurn) {
+          localStorage.setItem('Nvisual_pageTurn', window.nvisual.pageTurn)
+        }
+        if (!localStorage.getItem('Nvisual_theme') || localStorage.getItem('Nvisual_theme') === 'undefined') {
+          localStorage.setItem('Nvisual_theme', window.nvisual?.theme || '')
+        }
+        if (localStorage.getItem('Nvisual_noModifyLogo') === null) {
+          localStorage.setItem('Nvisual_noModifyLogo', window.nvisual.noModifyLogo)
+        }
+        if (window.nvisual.nvisualTitle) {
+          localStorage.setItem('Nvisual_Title', window.nvisual.nvisualTitle)
+          document.title = window.nvisual.nvisualTitle
+        } else {
+          localStorage.setItem('Nvisual_Title', 'nvisual')
+          document.title = 'nvisual'
+        }
+      }
+      return new Promise((resolve, reject) => {
+        try {
+          // url 是按需加载的js文件
+          // 1. 创建一个script标签
+          var script = document.createElement('script')
+          script.async = false
+          // 处理ie的兼容
+          if (script.readyState) {
+            script.onreadystatechange = function() {
+              // 如果script已经下载完成
+              if (
+                script.readyState === 'complete' ||
+                script.readyState === 'loaded'
+              ) {
+                loadItem()
+                resolve()
+              }
+            }
+          } else {
+            // 监听script的下载的状态 当状态变为下载完成后 再执行 resolve()
+            script.onload = function() {
+              loadItem()
+              resolve()
+            }
+          }
+          // 2. 给script标签添加src 引入一个js文件
+          script.src = url
+          // 3. 追加到body
+          document.body.appendChild(script)
+        } catch (error) {
+          reject(error)
+        }
+      })
+    }
+  </script>
+  <script>
+    if (localStorage.getItem("Nvisual_language")) {
+      const url = "./localization/" + localStorage.getItem("Nvisual_language") + ".json"
+      // 申明一个XMLHttpRequest
+      var request = new XMLHttpRequest();
+      // 设置请求方法与路径
+      request.open("get", url, false);
+      // 不发送数据到服务器
+      request.send(null);
+      //XHR对象获取到返回信息后执行
+      // request.onload = function () {
+      // 返回状态为200，即为数据获取成功
+      if (request.status == 200) {
+        const lang = JSON.parse(request.responseText);
+        document.getElementById('loginButton').innerHTML = lang['access.登录'] || '登录'
+        document.getElementById('loginingButton').innerHTML = lang['access.登录'] || '登录'
+        document.getElementById('from_password').placeholder = lang['access.密码'] || '密码';
+        document.getElementById('from_userName').placeholder = lang['access.用户名'] || '用户名';
+        document.getElementById('noAccount').innerHTML = lang['access.还没有账户？'] || '还没有账户？'
+        document.getElementById('registAccountButton').innerHTML = lang['access.注册公司'] || '注册公司'
+        document.getElementById('forgetPassword').innerHTML = lang['access.忘记密码？'] || '忘记密码？'
+      }
+      // }
+    }
+  </script>
+</body>
+
+</html>

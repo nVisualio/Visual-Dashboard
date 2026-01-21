@@ -1,0 +1,23 @@
+.breadcrumbs {
+  display: none !important;
+}
+
+.combined-view-toggle-arrow-right{
+  display: none !important;
+}
+
+#toolButton{
+  display: none !important;
+}
+
+#main-centerView-header {
+  display: none !important;
+}
+
+#statusBar {
+  display: none !important;
+}
+
+#ht-view {
+  height: 100% !important;
+}

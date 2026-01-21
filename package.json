@@ -1,0 +1,99 @@
+{
+  "name": "dashboard",
+  "version": "0.1.0",
+  "appName": "大屏",
+  "projectName": "business",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --host 0.0.0.0",
+    "build": "vue-cli-service build",
+    "tar": "node ./../../src/build/build.js --build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "@tarikjabiri/dxf": "^2.8.9",
+    "animate.css": "^4.1.1",
+    "archiver": "^6.0.1",
+    "bcryptjs": "^2.4.3",
+    "core-js": "^3.6.5",
+    "echarts": "^6.0.0",
+    "moment": "^2.29.1",
+    "register-service-worker": "^1.7.1",
+    "vjcommon": "^1.0.10",
+    "vjmap": "^1.0.74",
+    "vue": "~2.6.11",
+    "vue-grid-layout": "^2.4.0",
+    "vue-router": "~3.2.0",
+    "vuedraggable": "^2.24.3",
+    "vuex": "~3.6.0",
+    "xlsx": "^0.18.5",
+    "xterm": "^4.16.0",
+    "xterm-addon-fit": "^0.5.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.16.0",
+    "@babel/plugin-proposal-optional-chaining": "^7.16.0",
+    "@volar/vue-language-plugin-pug": "latest",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-e2e-cypress": "~4.5.0",
+    "@vue/cli-plugin-eslint": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/eslint-config-standard": "^5.1.2",
+    "@vue/test-utils": "^1.0.3",
+    "axios": "^0.20.0",
+    "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.3",
+    "dart-sass": "^1.25.0",
+    "element-ui": "^2.13.2",
+    "eslint": "^6.7.2",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-vue": "^6.2.2",
+    "glob": "^7.1.6",
+    "html-webpack-plugin": "^4.4.1",
+    "open-browser-webpack-plugin": "0.0.5",
+    "pug": "^3.0.0",
+    "pug-plain-loader": "^1.0.0",
+    "qs": "^6.9.4",
+    "sass": "^1.30.0",
+    "sass-loader": "^10.1.0",
+    "single-line-log": "^1.1.2",
+    "sockjs-client": "^1.5.0",
+    "stompjs": "^2.3.3",
+    "style-loader": "^1.2.1",
+    "stylus": "^0.54.8",
+    "stylus-loader": "^3.0.2",
+    "tar": "^6.1.13",
+    "typescript": "^4.0.3",
+    "vue-class-component": "^7.2.5",
+    "vue-property-decorator": "^9.0.0",
+    "vue-template-compiler": "~2.6.11"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "@babel/eslint-parser"
+    },
+    "rules": {
+      "globals": {
+        "globalConfig": true
+      }
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

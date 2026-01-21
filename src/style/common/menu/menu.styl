@@ -1,0 +1,692 @@
+body{
+  user-select: none;
+  .path1, path2{
+    font-family: inherit;
+  }
+}
+/*去除a标签下划线*/
+a {
+	text-decoration: none;
+}
+/*去除未被访问的a标签的下划线*/
+a:link {
+	text-decoration: none;
+}
+/*去除已经被访问过的a标签的下划线*/
+a:visited {
+	text-decoration: none;
+}
+/*去除鼠标悬停时的a标签的下划线*/
+a:hover {
+	text-decoration: none;
+}
+/*去除正在点击的a标签的下划线（鼠标按下，尚未松开）*/
+a:active {
+	text-decoration: none;
+}
+/*去除获得焦点的a标签的下划线（被鼠标点击过）*/
+a:focus {
+	text-decoration: none;
+}
+.secondary-menuBar-item-tooltip{
+  border: 0 !important;
+  box-shadow 0 1px 6px 0 #aaa
+  font-size: 12px;
+  font-weight: normal;
+  letter-spacing: 0px;
+  color: #666666;
+  pointer-events: none;
+  .popper__arrow{
+    border-bottom-color: #fff0 !important;
+  }
+}
+#menu{
+  min-width 1200px
+  #menuBody{
+    width: 100%;
+    border-bottom 1px solid #e1e1e1;
+    &:focus-visible{
+      outline none
+    }
+    // 标题栏, 包含logo、一级菜单栏、搜索输入框、功能模块
+    .mainMenu{
+      width: 100%;
+      height: 40px;
+      display: flex
+      align-items: center;
+      justify-content: center;
+      position relative
+      // border: 1px solid #E4E6EA;
+      // logo
+      .mainMenu-logo{
+        display: flex
+        align-items: center;
+        justify-content: center;
+        padding: 0 0px;
+        height: 100%;
+        margin-right: auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        .svgIcon{
+          width auto
+          height 80%
+          object-fit contain
+        }
+      }
+      // 一级菜单栏
+      .mainMenu-list{
+        display: flex
+        height: 100%;
+        .mainMenu-item{
+          padding: 0 4px;
+          font-size: 13px;
+          font-weight: normal;
+          letter-spacing: 0em;
+          color: #606060;
+          margin: 0 6px;
+          display flex
+          align-items: center;
+          box-sizing: border-box
+          height: 100%
+          border-bottom: 2px solid #fff;
+          cursor: pointer;
+          &:hover{
+            font-weight: bold;
+            color: #08A170;
+            border-bottom: 2px solid #08A170;
+          }
+          &.disabled{
+            color: #ccc !important
+            pointer-events: none;
+            .span{
+              color: #ccc !important
+            }
+          }
+        }
+        // 标题栏展开收起的箭头,用来控制 二级菜单栏 的 存在 形式
+        .switch-expand-mainMenu{
+          height 100%;
+          display flex
+          justify-content: space-between;
+          align-items: center;
+          cursor pointer
+          .arrow-down{
+            transform:rotate(180deg);
+          }
+        }
+      }
+      .mainMenu-right{
+        display: flex;
+        flex-direction: row;
+        margin-left: auto;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 40px;
+      }
+    }
+    // 二级菜单栏
+    .secondary-menuBar{
+      position absolute
+      top: 40px;
+      left: 0;
+      z-index 101
+      width: 100%;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-top: 1px solid #E8E8E8;
+      background-color: #fff;
+      border-bottom: 1px solid #E4E6EA;
+      box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+      .secondary-menuBar-item{
+        font-size: 12px;
+        font-weight: normal;
+        letter-spacing: 0em;
+        color: #5E5E5E;
+        display: flex
+        align-items: center;
+        position relative
+        height: 100%
+        .span{
+          padding: 3px 10px;
+          display: flex
+          align-items: center;
+          border-radius: 2px;
+          &.divider {
+            // border-right: 1px solid #D8D8D8;
+          }
+          &.null{
+            padding: 3px 7px;
+          }
+          &:hover{
+            background-color #F2F4F7
+          }
+          .icon-forward{
+            transform: rotate(90deg);
+          }
+        }
+        i.divider{
+          display: inline-block;
+          width: 1px;
+          height: 20px;
+          border-right: 1px solid #d8d8d8;
+          margin: 0 3px 0 2px;
+        }
+        .icon{
+          font-size: 12px;
+        }
+        .itemIconfount{
+          font-size: 14px;
+          margin-top 1px;
+        }
+        .label{
+          margin-left: 5px;
+        }
+        .checkboxDiv{
+          margin-left auto;
+          .nullFalse{
+            display none
+          }
+        }
+        .el-icon-caret-bottom{
+          margin-left: 5px;
+        }
+        &:hover{
+          .timesThird-menubar{
+            display: block
+          }
+          .span{
+            background-color #F2F4F7
+          }
+        }
+        &.disabled{
+          color: rgba(94,94,94, 0.6) !important
+          pointer-events: none;
+          .span{
+            color: rgba(94,94,94, 0.6) !important
+          }
+        }
+        // 第三级菜单
+        .timesThird-menubar{
+          position: absolute;
+          top: 35px;
+          left: 50%;
+          min-width: 150px;
+          margin-left: -75px;
+          padding: 10px 0;
+          background-color: #fff;
+          box-shadow: 1px 1px 5px 0px #444;
+          display: none;
+          .timesThird-menubar-item{
+            padding: 8px 15px 8px 25px;
+            display: flex;
+            align-items: center;
+            &:hover{
+              background-color: #F2F4F7;
+            }
+            .icon, .itemIconfount{
+              font-size: 12px;
+            }
+            .label {
+              white-space: nowrap;
+              font-size: 12px;
+            }
+            &.disabled{
+              color: rgba(204,204,204, 0.6) !important
+              pointer-events: none;
+              .span{
+                color: rgba(204,204,204, 0.6) !important
+              }
+            }
+          }
+        }
+      }
+    }
+     // 当固定二级菜单栏时, 一级的item和二级菜单区域别所呈现的样式
+    &.switchExpandMainMenu{
+      height 75px;
+      .mainMenu{
+        .mainMenu-list{
+          .mainMenu-item{
+            &.hover{
+              font-family: SourceHanSansCN-Bold;
+              font-weight: bold;
+              color: #08A170;
+              border-bottom: 2px solid #08A170;
+            }
+            .secondary-menuBar{
+              box-shadow: 0px 0px 0px 0px #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  // 搜索输入框的样式
+  .select-search{
+    float: right;
+    width 210px
+    height 29px
+    background: #f9f9f9
+    margin-right: 20px;
+    border-radius 20px
+    align-items: center;
+    position relative
+    .el-select-icon{
+      width: 45px;
+      height 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      cursor pointer
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 10;
+      .iconLog{
+        margin-right 5px;
+        font-size 17px;
+      }
+      .icon-forward{
+        transform: rotate(90deg);
+      }
+    }
+    .search {
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      box-sizing: border-box;
+      .el-input{
+        width: 100%;
+        height: 100%;
+      }
+      .el-input__inner{
+        padding-left: 45px !important;
+        height 100%
+        // line-height 26px
+        // border-radius 20px
+        font-size: 12px
+        background: #F9F9F900;
+        padding: 0 5px;
+        border 0;
+      }
+      .el-input__icon {
+        height: 100%;
+        width: 25px;
+        text-align: center;
+        transition: all 0.3s;
+        line-height: 25px;
+        font-size 12px;
+        color #A7A7A7
+      }
+    }
+    .el-select-list-area{
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      position absolute;
+      width 100%
+      bottom: -127px;
+      z-index: 101;
+      box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.1);
+      background-color #fff;
+      padding: 6px 0;
+      .el-option{
+        background-color #fff;
+        padding: 6px 10px;
+        width 100%;
+        display: flex;
+        align-items: center;
+        cursor pointer
+        font-size 12px;
+        box-sizing: border-box;
+        text-align left
+        i {
+          margin-right 8px;
+          font-size 17px;
+        }
+      }
+    }
+  }
+  
+  .rightMenu {
+    display flex;
+    padding 0 0px;
+    .pageTurn {
+      position: relative;
+      display: none;
+      margin-right 17px
+      img {
+        padding: 3px 0 0 2px
+        height: 17px
+      }
+    }
+    .setting{
+      position: relative;
+      width 16.5px
+      margin-right 17px
+      .newMessageIcon{
+        position absolute
+        top -8px
+        right -8px
+        border-radius 3px
+        height 16px
+        min-width 14px
+        color: #fff
+        background-color red
+        font-size 12px
+      }
+      i{
+        font-size: 22px;
+      }
+      a,svg{
+        text-decoration: 0;
+        height 37px
+        cursor pointer
+        width 24px
+      }
+    }
+  }
+  // 用户icon天
+  .user {
+    box-sizing border-box
+    position fixed
+    z-index 1000
+    width 254px
+    right 0
+    top 37px
+    padding 22px 16px
+    border 1px solid #fff;
+    img{
+      height 60px
+      width 60px
+    }
+    .name{
+      display block
+      font-size 14px
+      margin 15px 0
+    }
+    .divider{
+      width 94%
+      margin 20px 3%
+      border-top 1px solid
+    }
+    .tooltips{
+      display flex
+      justify-content space-between
+      padding 0 10px
+      .item{
+        cursor pointer
+        border-radius 50%
+        width 35px
+        height 35px
+        .svgIcon{
+          height inherit
+          width inherit
+          padding 5px
+          box-sizing border-box
+        }
+      }
+    }
+    .label{
+      width 80%
+      margin 0 10%
+      height 40px
+      align-items center
+      font-size 12px
+      display flex
+      justify-content space-around
+      cursor pointer
+      .title{
+        display flex
+        align-items center
+      }
+      a{
+        color: #5e5e5e;
+      }
+      .svgIcon{
+        width 25px
+        height 25px
+      }
+    }
+    .item{
+      border: 1px solid #fff;
+    }
+  }
+  .svgIcon{
+    width 20px
+    height 20px
+  }
+  // 常用快捷键的弹框(帮助菜单里面点击弹出的)
+  .operationDialog{
+    position: absolute;
+    width: 695px;
+    height: 390px;
+    z-index: 2000;
+    margin-top: -170px;
+    margin-left: -350px;
+    top: 50%;
+    left: 50%;
+    background: rgba(255, 255, 255, 1);
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.14);
+    box-sizing: border-box;
+    padding: 8px 15px;
+    .operationhead{
+      overflow hidden;
+      .pageItem{
+        padding: 5px 8px;
+        margin-right: 17px;
+        float left
+        cursor pointer
+        box-sizing: border-box;
+        border-bottom: 1.3px solid #fff;
+        span{
+          line-height 19px
+          color: #4F5D79
+          font-size: 13px;
+        }
+      }
+    }
+    .operationBody{
+      height 272px
+      padding-top: 30px;
+      display: flex;
+      height: auto;
+      justify-content: center;
+      .mouseOperation{
+        display inline-block
+        padding  0 0 40px
+        width 25%
+        .el-image__inner{
+          height 60px
+          padding-top  20px
+          padding-bottom 30px
+        }
+        span{
+          display block
+          font-size 14px
+          padding 10px
+        }
+      }
+      .keyOperation{
+        width:340px;
+        &:nth-child(1){
+          border-right: 1px solid rgba(166, 166, 166, 1);
+        }
+        .tr{
+          text-align: left;
+          padding-left: 50px;
+          line-height: 28px;
+          span{
+            margin-right 10px
+            padding 2px 5px
+            font-size 12px
+            &.key{
+              display inline-block;
+              width 60px;
+              text-align: right;
+              font-weight: bold;
+            }
+          }
+        }
+        .oneKey{
+          border-radius 3px
+        }
+      }
+    }
+    .icon-close{
+      position absolute
+      right 0
+      top 0
+      font-size 16px!important
+      line-height 26px
+      width 40px
+      cursor pointer
+    }
+  }
+}
+
+.el-menu--horizontal{
+  .svgIcon{
+    width 20px
+    height 20px
+  }
+  .divider{
+    box-sizing border-box
+  }
+  .el-menu{
+    padding 0
+    margin 0
+    .el-menu-item{
+      width 150px
+      min-width 150px
+      height 34px
+      line-height 34px
+      display flex
+      align-items center
+      .label{
+        flex 1 0 0
+        padding-left 10px
+        font-size 12px
+      }
+      .key{
+        font-size 12px
+      }
+    }
+    .secondFloorMenuBody{
+      .el-submenu__title{
+        display flex
+        align-items center
+        .label{
+          flex 1 0 0
+          padding-left 10px
+          font-size 12px
+        }
+        .el-submenu__icon-arrow{
+          display none
+        }
+        .iconfont{
+          transition transform 0.3s
+        }
+      }
+    }
+    .is-opened{
+      .iconfont{
+        transform rotate(180deg)
+      }
+    }
+  }
+  .el-menu--popup{
+    .otherMenu{
+      &:first-child{
+        .el-menu--horizontal{
+          top 0!important
+        }
+      }
+    }
+  }
+  .menu-disabled{
+    cursor not-allowed
+    pointer-events none
+  }
+  .divider{
+    border-bottom 1px solid
+  }
+}
+.el-menu--popup{
+  min-width 0!important
+  .commonMenu{
+    height 49px!important
+    width 70px!important
+    padding 0!important
+    .iconfont{
+      height 16px
+      margin 0
+      display block
+      font-size 25px
+      line-height 25px
+      text-align center
+    }
+    .name{
+      display block
+      font-size 12px
+      //zoom 0.5
+      text-align center
+    }
+  }
+}
+.el-message-box__wrapper{
+  z-index: 99999 !important;
+}
+>>>.el-message-box__wrapper{
+  z-index: 99999 !important;
+}
+
+@media screen and (min-width: 1750px) {
+  #menu .select-search{
+    width: 380px;
+  }
+}
+@media screen and (min-width: 1650px)  and (max-width 1750px) {
+  #menu .select-search{
+    width: 330px;
+  }
+}
+@media screen and (min-width: 1550px)  and (max-width 1650px) {
+  #menu .select-search{
+    width: 270px;
+  }
+}
+@media screen and (min-width: 1450px) and (max-width 1550px) {
+  #menu .select-search{
+    width: 230px;
+  }
+}
+@media screen and (max-width: 1400px) and (max-width 1450px) {
+  #menu .select-search{
+    width: 180px;
+  }
+}
+@media screen and (max-width: 1350px) and (max-width 1400px) {
+  #menu .select-search{
+    width: 170px;
+  }
+}
+@media screen and (max-width: 1300px) and (max-width 1350px) {
+  #menu .select-search{
+    width: 138px;
+  }
+}
+@media screen and (max-width: 1200px) and (max-width 1300px) {
+  #menu .select-search{
+    width: 130px;
+  }
+}

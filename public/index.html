@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link rel="icon" href="/favicon.ico">
+  <link rel="stylesheet" href="<%= BASE_URL %>config/display.css?v=1.0.4">
+  <link rel="stylesheet" href="<%= BASE_URL %>css/element-ui/element.css?v=1.0.4">
+  <title></title>
+  <script src="<%= BASE_URL %>config/api.js"></script>
+  <script>window.globalConfig = {}</script>
+</head>
+
+<body>
+  <div id="app"></div>
+  <!-- built files will be auto injected -->
+  <script>
+    if (localStorage.getItem("Nvisual_Title")) {
+      document.title = localStorage.getItem("Nvisual_Title")
+    } else {
+      document.title = 'nvisual'
+    }
+  </script>
+</body>
+
+</html>

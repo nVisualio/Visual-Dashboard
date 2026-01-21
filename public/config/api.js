@@ -1,0 +1,4 @@
+window.nvisualApi = {
+  diagramApiHost: '', // 'http://release.nvisual.com:9090';
+  reportAdapterHost: 'http://release.nvisual.com:9090/reportAdapter',
+}

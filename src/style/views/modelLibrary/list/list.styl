@@ -1,0 +1,695 @@
+$tabsColor = #000000
+$tabIconColor = #FFFFFF
+$tableToolBar = #555555
+#modelLibraryMain
+  flex-grow 1
+  overflow auto
+  display flex
+  >>>.el-loading-spinner
+    // background-image url('/loading.svg');
+    background-repeat  no-repeat;
+    background-size  200px 60px;
+    height 100px;
+    width 100%;
+    background-position center;
+    top 40%
+    svg
+      display none
+  .tabs
+    box-sizing border-box
+    height 100%
+    width 46px
+    padding 16px 0
+    background-color $tabsColor
+
+    .tab
+      //height 60px
+      width: inherit
+      color $tabIconColor
+      cursor pointer
+      opacity 0.5
+      padding 5px 0
+
+      &:hover
+        opacity 1
+      span
+        font-size 12px
+        line-height 16px
+        display block
+        zoom 0.8
+      .icon
+        line-height 18px
+        padding 5px 0
+        zoom 1
+        font-size 20px
+    .isClick
+      opacity 1
+
+  .table
+    overflow auto
+    height 100%
+    max-height 100%
+    flex 1 0 0
+    .tableBody
+      position relative
+      height inherit
+      display flex
+      flex-direction column
+      .header
+        text-align left
+        .bar
+          display inline-block
+          width 50%
+          text-align right
+          .tool
+            display inline-block
+            vertical-align middle
+            line-height 40px
+            overflow hidden
+            height 40px
+            transition all 1s
+            .icon
+              display inline-block
+              width 40px
+              line-height inherit
+              font-size 18px
+              text-align center
+              cursor pointer
+              &:hover
+                background-color #EBEEF5
+          .search
+            display inline-block
+            box-sizing border-box
+            padding 5px 20px
+            .el-input
+              .el-input__inner
+                height 30px
+                line-height 30px
+                width 220px
+                &:focus
+                  border 1px solid #DCDFE6
+              .el-input__icon
+                line-height 30px
+        .el-breadcrumb
+          display inline-block
+          vertical-align middle
+          height 40px
+          padding 5px 0 5px 20px
+          width 50%
+          box-sizing border-box
+          .el-breadcrumb__item
+            line-height 30px
+            .el-breadcrumb__inner
+              display inline-block
+              height inherit
+              font-size 14px
+              font-weight 600
+              transition all 0.5s
+              cursor pointer
+              font-family Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif
+              border-bottom 2px solid transparent
+              &:hover
+                color #409eff
+                border-color skyblue
+              .el-tooltip
+                display inline-block
+                padding 0 20px
+      .tableComponent
+        //height inherit
+        display flex
+        flex-direction column
+        flex-grow 1
+        .el-table
+          overflow scroll
+          display flex
+          flex 1 0 0
+          flex-direction column
+          border 0
+          &::before,
+          &::after
+            display none
+          .el-table__body-wrapper
+            flex-grow 1
+
+    .el-table::before
+      height 0
+    .caret-wrapper
+      position absolute
+      top -5px
+    .cell
+      padding 0
+      max-height 28px
+      .inputText
+        display inline-block
+        width 80%
+        height 25px
+        line-height 25px
+        cursor pointer
+        border 1px solid #DCDFE6
+        border-radius 5px
+        box-sizing border-box
+        transition border-color 0.5s
+        &:hover
+          border-color #999999
+      .inputTextTwo
+        width 38%!important
+        margin 0 1%
+      .inputTextThree
+        width 26%!important
+        margin 0 1%
+    .el-table__body-wrapper
+      height calc(100% - 42px)
+      border-bottom 10px
+      border-right 10px
+      overflow scroll
+      td
+        border-right-color transparent
+      .el-table__row
+        height 3px
+    .el-table__header-wrapper
+      border-bottom 2px solid #69aeff
+      .el-table__header
+        box-sizing content-box
+        padding-right 10px
+      th
+        border-style dotted
+        border-color transparent
+        transition border-right-color 1s
+        font-weight normal
+        color #222222
+      &:hover
+        th
+          border-right-color #AAAAAA
+
+    .tableToolBar
+      height 49px
+      background-color $tableToolBar
+      color #FFFFFF
+
+      .tableTool
+        float left
+        width 50px
+        height inherit
+        cursor pointer
+
+        .img
+          display block
+          height 30px
+          line-height 30px
+          font-size 20px
+
+        span
+          height 19px
+          line-height 19px
+          font-size 12px
+          zoom 0.8
+
+  .filter
+    position absolute
+    background-color #FFFFFF
+    top 90px
+    left 10px
+    //height 414px
+    width 230px
+    z-index 3
+    border 1px solid #AAAAAA
+    border-radius 10px
+    .header
+      margin-top 5px
+      height 30px
+      text-align right
+      div
+        text-align center
+        height 30px
+        line-height 30px
+        font-size 20px
+        width 30px
+        transition transform 0.5s
+        cursor pointer
+        &:hover
+          transform rotate(-180deg)
+
+    .main
+      padding 10px 30px
+      display flex
+      flex-wrap wrap
+      align-content flex-start
+      .el-switch
+        width 150px
+        height 26px
+        flex-grow 1
+
+    //.close
+    //  cursor pointer
+    //  font-size 16px
+    //  position absolute
+    //  right 10px
+    //  top 10px
+    //.filterBox
+    //.checkboxBody
+    //  font-size 12px
+    //  width 160px
+    //
+    //  .title
+    //    position relative
+    //    top 10px
+    //    text-align left
+    //    height 40px
+    //    line-height 80px
+    //
+    //  .reset
+    //    position relative
+    //    line-height 80px
+    //    left 50px
+    //    top 10px
+    //    cursor pointer
+    //  .filterBox
+    //    height 305px
+    //    overflow overlay
+    //    &::-webkit-scrollbar
+    //      width 0
+    //    .filterCheckBox
+    //      cursor pointer
+    //      margin-left 20px
+    //      text-align left
+    //      font-size 12px
+    //
+    //    input
+    //      cursor pointer
+
+  // 颜色选择器样式
+  .el-color-dropdown
+    .el-color-dropdown__link-btn // 去掉重置颜色按钮
+      display none
+
+    .el-color-dropdown__value
+      .el-input
+        padding 2px 0
+        height 28px
+        float none
+
+        .el-input__inner
+          height 24px !important
+          padding 0
+          margin 0
+          border-radius 0
+          background-color #FFFFFF
+          color #000000
+          border 1px solid #AAAAAA
+          padding-left 5px
+
+  // 字段列表选择颜色框
+  .fieldFontSetting
+    height 186px
+    width 149px
+    background-color: #FFFFFF
+    border 1px solid #888888
+    position fixed
+    z-index 2
+    top 0
+    font-size 12px
+    .item
+      height 24px
+      line-height 24px
+      margin 10px 0
+      span
+        vertical-align top
+        padding-right 10px
+      .el-color-picker
+        height 24px
+        width 60px
+        .el-color-picker__trigger
+          width inherit
+          height inherit
+          padding 0
+          .el-color-picker__icon
+            display none
+      .el-input
+        width 60px
+        height 24px
+        padding-right 0
+        float none
+        .el-input__inner
+          border-radius 5px
+          height inherit
+          background-color #FFFFFF
+          border 1px solid #999999
+          color #222222
+          padding 0
+          text-align center
+    .el-checkbox__label
+      padding 5px
+      font-size 12px
+    .reset
+      box-sizing border-box
+      display inline-block
+      border 1px solid #999999
+      font-size 14px
+      line-height 24px
+      width 60px
+      border-radius 5px
+      background-color #69aeff
+      color #FFFFFF
+      cursor pointer
+  // 列表样式指定
+  // filter
+  .filterButton
+    cursor pointer
+  .inputBox
+    width 80%
+    height 25px
+    .el-input__inner
+      height 25px
+      line-height 25px
+      padding 0 5px
+      text-align center
+      &:focus
+        border-color #666666
+  .threeDSize
+    width 28% !important
+    padding-right 1%
+  .size
+    width 40% !important
+    padding-right 3%
+  .lock,
+  .unlock
+    text-align left
+    margin-left 2%
+    width 8%
+    cursor pointer
+    transition all 0.3s
+    font-size 16px
+    font-weight 700
+  .lock:hover
+    color LimeGreen
+  .unlock:hover
+    color red
+  // 选择器
+  .selector
+    width 90%
+    background-color transparent
+    padding 0
+    margin 0
+
+    .el-input,
+    .is-focus
+      padding 0
+      height 28px
+      float left
+      width 100%
+      background-color transparent
+
+      .el-input__inner
+        height 28px
+        padding 0
+        margin 0
+        //border-radius 0
+        background-color transparent
+        color #000000
+        border 1px solid transparent
+        transition border 1s
+        padding-left 5px
+        &:hover
+          border 1px solid #AAAAAA
+
+      .el-input__suffix
+        .el-select__caret
+          line-height 14px
+
+  // str
+  .str,
+  .field,
+  .objectTrigger,
+  .linkTrigger,
+  .example,
+  .limit
+    display inline-block
+    width 100%
+    text-align center
+    font-weight 700
+
+  .field
+    color #E35112
+    cursor pointer
+
+  .objectTrigger,
+  .linkTrigger
+    color #019000
+    cursor pointer
+
+  .example
+    color #C203FF
+    cursor pointer
+
+  .limit
+    color #C203FF
+  .operation
+    color #A25D0D
+    cursor pointer
+  .addField
+    background-color #FF0000
+    width 16px
+    margin-left 5px
+    padding 0 4px
+    border-radius 3px
+    color #FFFFFF
+    cursor pointer
+  // color
+  .color
+    width 100%
+    height 100%
+
+    .el-color-picker__trigger
+      margin-top 2px
+      display inline-block
+      text-align center
+      width 16px
+      line-height 100%
+      height 16px
+      padding 0
+      border 0
+
+      .el-color-picker__color
+        border 0
+
+        .el-color-picker__color-inner
+          border-radius 50%
+
+      .el-color-picker__icon
+        display none
+  // pic
+  .thumbnail
+    height 14px
+    max-width 100%
+    cursor pointer
+
+    .el-input__inner
+      height 24px
+      padding 0
+      margin 0
+      border-radius 0
+      background-color #FFFFFF
+      color #000000
+      border 1px solid #AAAAAA
+      padding-left 5px
+
+  // fontSetting
+  .fontSetting
+    line-height 27px
+    border 1px solid red
+    padding 2px 35px 3px 35px
+    cursor pointer
+  // producePreview
+  .producePreview
+    display inline-block
+    height 0
+    width 65px
+    //border-top 5px solid red
+
+  //switch
+  .switch
+    .el-switch__core
+      height 18px
+      &::after
+        top 0
+//slider
+.order
+  .slider
+    display inline-block
+    vertical-align middle
+    width 300px
+    padding-right 15px
+.addObject,
+.addFieldDialog,
+.addObjectTriggerDialog,
+.addObjectAddClassDialog,
+.addObjectAddChildrenClassDialog,
+.addObjectAddBrandDialog
+  .el-dialog
+    background-color transparent
+  .el-form-item__error
+    position absolute
+    top 8px
+  .addObjectAddClass
+    width 15px
+    height 15px
+    background-color #FF0000
+    position absolute
+    left 338px
+    top 8px
+    border-radius 5px
+    font-size 15px
+    line-height 15px
+    color #FFFFFF
+    cursor pointer
+  .el-dialog__header
+    height 35px
+    padding 0
+    background-color rgb(70, 68, 68)
+    span
+      color #FFFFFF
+    .el-dialog__title
+      float left
+      padding-left 15px
+      font-size 15px
+      line-height 35px
+      text-align left
+    .el-dialog__headerbtn
+      top 10px
+      right 10px
+      i
+        color #FFFFFF
+
+  .el-dialog__body
+    padding 27px 40px
+    background-color rgba(87, 87, 87, 0.898039215686275)
+
+    .checkbox
+      height 50px !important
+
+      .el-form-item__content
+        height inherit !important
+
+        .el-checkbox.is-checked,
+        .el-checkbox
+          margin 0 30px
+          height inherit
+          line-height 50px
+          //color #FFFFFF
+
+          .el-checkbox__inner
+            border 1px solid red
+
+          .el-checkbox__label
+            color #FFFFFF
+
+        .el-checkbox.is-checked
+          .el-checkbox__inner
+            background-color #FFFFFF
+
+            &:after
+              border-color red
+
+    .el-form-item
+      margin 0
+
+      .el-form-item__content
+        line-height 32px
+        .el-select
+          width 177px
+      .el-form-item__label
+        line-height 32px
+        color #FFFFFF
+        position relative
+        left 80px
+        &::before
+          position absolute
+          left -8px
+
+    .el-select
+      position absolute
+      left 150px
+
+      .el-input
+        left 0
+
+    .el-input
+      position absolute
+      left 150px
+      width 177px
+      padding 0
+      height 28px
+
+      .el-input__inner
+        border-radius 0
+        background-color #424242
+        color #FFFFFF
+        height 28px
+    .el-input__suffix
+      .el-select__caret
+        line-height 14px
+
+    .el-button
+      height 30px
+      width 88px
+      margin 0 15px
+      padding 0
+      line-height 30px
+      border 0
+      color #FFFFFF
+
+      &:first-child
+        background-color #919191
+
+      &:last-child
+        background-color #393939
+
+    .divider
+      border-bottom 1px dotted #AAAAAA
+      margin 25px 0
+
+.addObjectAddClassDialog,
+.addObjectAddChildrenClassDialog,
+.addObjectAddBrandDialog
+  top 10vh
+  .el-form-item__content
+    .el-button
+      position relative
+      left 105px
+.addFieldDialog,
+.addObjectTriggerDialog
+  .el-dialog__body
+    .el-form
+      .setColor
+        .filterColor,
+        .filterBackColor
+          height 30px
+          background-color #444444
+          border-radius 5px
+          .el-color-picker__trigger
+            width 60px
+            height 30px
+            padding 0
+            border 0
+            .el-color-picker__color
+              border 0
+              .el-color-picker__color-inner
+                border-radius 5px
+#file-upload-button
+  display none
+.el-color-dropdown
+  .el-color-dropdown__btns
+    .el-color-dropdown__value
+      .el-input
+        .el-input__inner
+          width 120px
+          padding 2px 0
+          //height 28px
+          background-color transparent
+          margin 0
+          color #000000
+          border 1px solid #AAAAAA
+          padding-left 5px
+          transition  border 1s
+          text-align center
+          border-radius 3px

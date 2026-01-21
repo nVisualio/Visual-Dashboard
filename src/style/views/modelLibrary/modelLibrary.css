@@ -1,0 +1,147 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 2455533 */
+  src: url('../../../../public/font/modelLibrary.woff2?t=1628581606832') format('woff2'),
+       url('../../../../public/font/modelLibrary.woff?t=1628581606832') format('woff'),
+       url('../../../../public/font/modelLibrary.ttf?t=1628581606832') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-zhongzuo:before {
+  content: "\e620";
+}
+
+.icon-zhongzhidaxiao:before {
+  content: "\e61f";
+}
+
+.icon-zhiweimoren:before {
+  content: "\e61e";
+}
+
+.icon-niantie:before {
+  content: "\e61d";
+}
+
+.icon-tonglei:before {
+  content: "\e61c";
+}
+
+.icon-shanchu:before {
+  content: "\e61b";
+}
+
+.icon-quanxuan:before {
+  content: "\e61a";
+}
+
+.icon-pailie:before {
+  content: "\e619";
+}
+
+.icon-lianlu:before {
+  content: "\e618";
+}
+
+.icon-fuzhi:before {
+  content: "\e617";
+}
+
+.icon-duiqi:before {
+  content: "\e616";
+}
+
+.icon-tiaozheng:before {
+  content: "\e615";
+}
+
+.icon-dayin:before {
+  content: "\e614";
+}
+
+.icon-chexiao:before {
+  content: "\e613";
+}
+
+.icon-biaochi:before {
+  content: "\e612";
+}
+
+.icon-beijing:before {
+  content: "\e611";
+}
+
+.icon-dankaimen:before {
+  content: "\e610";
+}
+
+.icon-ts-tubiao_storagedevice:before {
+  content: "\e60f";
+}
+
+.icon-ts-tubiao_server:before {
+  content: "\e60e";
+}
+
+.icon-ts-tubiao_san-port:before {
+  content: "\e60d";
+}
+
+.icon-bx-sitemap:before {
+  content: "\e60c";
+}
+
+.icon-bxs-disc:before {
+  content: "\e60b";
+}
+
+.icon-bxs-briefcase-alt-2:before {
+  content: "\e60a";
+}
+
+.icon-bxs-book-content:before {
+  content: "\e609";
+}
+
+.icon-bx-right-indent:before {
+  content: "\e608";
+}
+
+.icon-bx-link-alt:before {
+  content: "\e607";
+}
+
+.icon-bx-infinite:before {
+  content: "\e606";
+}
+
+.icon-bx-directions:before {
+  content: "\e605";
+}
+
+.icon-bx-detail:before {
+  content: "\e604";
+}
+
+.icon-shiyingchuangkou:before {
+  content: "\e603";
+}
+
+.icon-suoxiao:before {
+  content: "\e602";
+}
+
+.icon-fangda:before {
+  content: "\e601";
+}
+
+.icon-yidong:before {
+  content: "\e600";
+}
+

@@ -1,0 +1,94 @@
+#pageSetting
+  position absolute
+  right 0
+  bottom 0
+  border-bottom 1px solid #2d2d2d
+  font-size 12px
+  color white
+  #pageSetting-header
+    height 28px
+    line-height 28px
+    padding-left 30px
+    border-bottom 1px solid #2d2d2d
+    background #4a4949
+    input[type="checkbox"],
+    span
+      vertical-align middle
+    #pageSetting-header-lockAllWrap
+      display inline-block
+      margin-left 30px
+    #pageSetting-header-lockNonAdministratorWrap
+      display inline-block
+      margin-left 30px
+    #closePageSettingWindow
+      position absolute
+      right 20px
+      .icon-guanbi
+        cursor pointer
+        &:hover
+          background-color #F00
+  #pageSetting-body
+    height 252px
+    td
+      height 50px
+      &:first-child
+        padding-left 24px
+    input[type="radio"]
+      margin 0 8px 0 0
+    input[type="text"]
+      height 20px
+    input[type="text"],
+    select
+      border 1px solid #2d2d2d
+      outline 0
+      background-color #424242
+      color white
+    select
+      height 25px
+    #pageSetting-body-left
+      display inline-block
+      width 336px
+      height 100%
+      border-right 1px solid #2d2d2d
+      background-color #505050
+      table
+        width 100%
+        tr:nth-child(1)
+          select
+            width 190px
+          input[type="radio"],
+          span 
+            vertical-align middle
+        tr:nth-child(2)
+          input[type="text"]
+            width 65px
+          input[type="radio"],
+          span 
+            vertical-align middle
+        tr:nth-child(3)
+          input
+            width 70px
+        tr:nth-child(4)
+          input
+            width 70px
+    #pageSetting-body-right
+      display inline-block
+      height 100%
+      background-color #565656
+      table
+        width 100%
+        border-collapse collapse
+        tr
+          border-bottom 1px solid #2d2d2d
+        tr:nth-child(1)
+          input
+            width 30px
+        tr:nth-child(4)
+          td:nth-child(2),
+          td:nth-child(3)
+            line-height 0
+            input 
+              width 68px
+            p
+              text-align center
+      
