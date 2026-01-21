@@ -12,4 +12,4 @@ npm run build 或 yarn build
 将打包后的所有文件放到/dist/projects/dashboard下，dist为主程序目录
 
 # 生产环境访问地址
-例如 http://cloud.nvisual.com/projects/dashboard/index.html
+例如 http://cloud.nvisual.com/projects/dashboard/index.html?id=24000000000001&name=顶层
