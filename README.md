@@ -1,24 +1,12 @@
-# project
+# 安装依赖
+npm i 或 yarn install
 
-## Project setup
-```
-yarn install
-```
+# 开发运行
+npm run serve 或 yarn serve
+本地运行 /access.html为登录页面 /index.html为主页面
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+# 打包
+npm run build 或 yarn build
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+# 部署
+将打包后的所有文件放到/dist/projects/dashboard下，dist为主程序目录
